@@ -9,7 +9,7 @@ def safe_filename(title: str) -> str:
     return title
 
 now = datetime.now()
-date_str = now.strftime("%Y-%m-%d %H-%M-%S")
+date_str = now.strftime("%Y-%m-%d %H-%M")
 year_str = now.strftime("%Y")
 time_str = now.strftime("%H:%M")
 
@@ -24,8 +24,8 @@ file_path = os.path.join(year_str, filename)
 
 with open(file_path, 'w') as file:
     file.write(f"# {entry_title}\n\n")
-    file.write(f"Date:* {now.strftime('%Y-%m-%d')}\n")
-    file.write(f"Time:* {time_str}\n\n")
+    file.write(f"*Date:* {now.strftime('%Y-%m-%d')}\n\n")
+    file.write(f"*Time:* {time_str}\n\n")
     file.write("---\n\n")
     file.write("Thoughts...\n")
 
